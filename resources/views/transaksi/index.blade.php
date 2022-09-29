@@ -101,7 +101,13 @@
                             <button class="dropdown-item" onclick="return confirm('Anda yakin data ini sudah kembali?')"> Sudah Kembali
                             </button>
                           </form>
+                          <form action="{{ route('transaksi.hilang', $data->id) }}" method="get" enctype="multipart/form-data">
+                            {{ csrf_field() }}
+                            <button class="dropdown-item" onclick="return confirm('Anda yakin data ini sudah hilang?')"> Hilang
+                            </button>
+                          </form>
                           @endif
+
                             <form action="{{ route('transaksi.destroy', $data->id) }}" class="pull-left"  method="post">
                             {{ csrf_field() }}
                             {{ method_field('delete') }}

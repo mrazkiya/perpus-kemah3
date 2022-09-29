@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 06 Jan 2021 pada 06.58
--- Versi server: 10.4.14-MariaDB
--- Versi PHP: 7.4.11
+-- Waktu pembuatan: 09 Jul 2021 pada 10.37
+-- Versi server: 10.4.11-MariaDB
+-- Versi PHP: 7.4.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -45,8 +46,7 @@ CREATE TABLE `anggota` (
 --
 
 INSERT INTO `anggota` (`id`, `user_id`, `npm`, `nama`, `tempat_lahir`, `tgl_lahir`, `jk`, `prodi`, `created_at`, `updated_at`) VALUES
-(3, 3, 1187050017, 'dadan', 'najalengka', '2000-05-14', 'L', 'TI', '2021-01-05 21:52:40', '2021-01-05 21:52:40'),
-(4, 4, 1187050070, 'em', 'bandung', '1999-01-06', 'L', 'SI', '2021-01-05 21:56:32', '2021-01-05 21:56:32');
+(11, 12, 1187050029, 'Doni', 'Bandung', '1992-12-31', 'L', 'TI', '2021-06-30 23:50:57', '2021-06-30 23:50:57');
 
 -- --------------------------------------------------------
 
@@ -74,9 +74,7 @@ CREATE TABLE `buku` (
 --
 
 INSERT INTO `buku` (`id`, `judul`, `isbn`, `pengarang`, `penerbit`, `tahun_terbit`, `jumlah_buku`, `deskripsi`, `lokasi`, `cover`, `created_at`, `updated_at`) VALUES
-(1, 'Belajar Pemrograman Java', '9920392749', 'Abdul Kadir', 'PT. Restu Ibu', 2018, 19, 'Buku Pertama Belajar Pemrograman Java Utk Pemula', 'rak1', 'buku_java.jpg', '2021-01-05 21:42:10', '2021-01-05 22:44:28'),
-(2, 'Pemrograman Android', '9920395559', 'Muhammad Nurhidayat', 'PT. Restu Guru', 2018, 14, 'Jurus Rahasia Menguasai Pemrograman Android', 'rak2', 'jurus_rahasia.jpg', '2021-01-05 21:42:10', '2021-01-05 21:42:10'),
-(3, 'Android Application', '9920392000', 'Dina Aulia', 'PT. Restu Ayah', 2018, 5, 'Buku Pertama Belajar Pemrograman Java Utk Pemula', 'rak2', 'create_your.jpg', '2021-01-05 21:42:10', '2021-01-05 21:53:16');
+(13, 'asdad', 'dsafa', 'asfasf', 'asfasf', 2018, 5, NULL, 'rak1', '70769-2021-07-01-06-47-27.jpg', '2021-06-30 23:47:27', '2021-07-01 00:10:02');
 
 -- --------------------------------------------------------
 
@@ -124,8 +122,7 @@ CREATE TABLE `transaksi` (
 --
 
 INSERT INTO `transaksi` (`id`, `kode_transaksi`, `anggota_id`, `buku_id`, `tgl_pinjam`, `tgl_kembali`, `status`, `ket`, `created_at`, `updated_at`) VALUES
-(2, 'TR00001', 4, 1, '2021-01-06', '2021-01-11', 'kembali', NULL, '2021-01-05 21:57:16', '2021-01-05 21:57:25'),
-(3, 'TR00003', 4, 1, '2021-01-06', '2021-01-11', 'pinjam', NULL, '2021-01-05 22:44:28', '2021-01-05 22:44:28');
+(10, 'TR00001', 11, 13, '2021-07-01', '2021-07-06', 'kembali', NULL, '2021-06-30 23:51:17', '2021-07-01 00:10:02');
 
 -- --------------------------------------------------------
 
@@ -151,8 +148,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `email`, `password`, `gambar`, `level`, `remember_token`, `created_at`, `updated_at`) VALUES
-(3, 'dadan', 'dadan', 'dadan@gmail.com', '$2y$10$VGfC81MVahBL2UKyZvXgFOWNGXFI.ecBLai.hGiIk7SJdw4Bv9VzK', '30310-2021-01-06-04-50-11.jpg', 'admin', 'OlJMFi26kTDHOJZLWNieesfTcNISkOTMnGefplAMGksaF58Dx24pDXL5iqdE', '2021-01-05 21:50:11', '2021-01-05 21:50:11'),
-(4, 'm.rifqi', 'em', 'emrifki@gmail.com', '$2y$10$1L.nmi5sN5Z7yCFdXkE4mufS7b1R9sIYOrZPR0wXeN43OeFPviHm6', '36836-2021-01-06-04-55-18.jfif', 'user', 'wZFVszf0Oj4AfGlAFjwxeM6T5TYXLXjs09T7EM5vaYYdAkp4KuiQHD8q7XBn', '2021-01-05 21:55:18', '2021-01-05 21:55:18');
+(6, 'admin', 'admin', 'admin@uinsgd.ac.id', '$2y$10$MB.0.BvOg2q.BxO74toM2.1Ux6RxuiCckXZkApKdezcinh6TPMUh.', '20970-2021-06-24-08-07-25.jpg', 'admin', 'wbeUKzodPYR5qxpRUX3ThE1e87sP0AehYj3nWGkCL59LQKFOwKN8kXIJHu6W', '2021-01-07 04:29:35', '2021-06-24 01:07:25'),
+(12, 'doni', 'doni', 'doni@gmail.com', '$2y$10$Ab5aVQEGp5A.J7rM52kweegfVrgaRizSNJ9fn0ek1Kle5ygwP0IlC', '48264-2021-07-01-06-50-31.png', 'user', 'gJv4KV8IAPYkGiFeX2jB8Wa0sKwMZcDgunVF0nJHrjMieokdtM4hFkXVe1zH', '2021-06-30 23:50:31', '2021-06-30 23:50:31');
 
 --
 -- Indexes for dumped tables
@@ -200,13 +197,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `anggota`
 --
 ALTER TABLE `anggota`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT untuk tabel `buku`
 --
 ALTER TABLE `buku`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT untuk tabel `migrations`
@@ -218,13 +215,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

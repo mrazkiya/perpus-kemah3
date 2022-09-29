@@ -43,7 +43,7 @@
                   <a class="nav-link {{ setActive(['buku*']) }}" href="{{route('buku.index')}}">Data Buku</a>
                 </li>
                  <li class="nav-item">
-                  <a class="nav-link {{ setActive(['user*']) }}" href="{{route('user.index')}}">Data User</a>
+                  <a class="nav-link {{ setActive(['user*']) }}" href="{{route('user.index')}}">Data Akun</a>
                 </li>
               </ul>
             </div>

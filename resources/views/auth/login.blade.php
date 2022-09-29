@@ -67,7 +67,7 @@
                   <button class="btn btn-primary submit-btn btn-block" type="submit">Login</button>
                 </div>
             </div>
-            <p class="footer-text text-center" style="margin-top: 20px;color: #308ee0">Copyright © {{date('Y')}} kelompok 2 - All rights reserved.</p>
+            <p class="footer-text text-center" style="margin-top: 20px;color: #308ee0">Copyright © {{date('Y')}} kelompok 5</p>
           </div>
         </div>
       </div>
